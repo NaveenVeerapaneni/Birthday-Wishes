@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Gift</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fad0c4, #ffdde1, #ff758c, #ff7eb3);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .gift-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #ff4081;
+            box-shadow: 0px 0px 15px rgba(255, 64, 129, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .cake {
+            width: 300px;
+            height: 300px;
+            background: url('gift-box.png') no-repeat center/cover;
+            transition: transform 0.3s ease-in-out;
+            animation: bounce 1.5s infinite;
+        }
+
+        .cake:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            background: linear-gradient(90deg, #ff6a00, #ee0979, #9a00d1, #3f51b5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 34px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+
+        .butterfly {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            animation: fly 10s linear infinite;
+        }
+
+        .butterfly:nth-child(1) { top: 10%; left: -10%; animation-duration: 8s; }
+        .butterfly:nth-child(2) { top: 30%; left: -15%; animation-duration: 10s; }
+        .butterfly:nth-child(3) { top: 50%; left: -20%; animation-duration: 12s; }
+        .butterfly:nth-child(4) { top: 70%; left: -25%; animation-duration: 14s; }
+
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(100vw, 50vh) rotate(20deg); }
+            100% { transform: translate(200vw, -10vh) rotate(-10deg); }
+        }
+    </style>
+</head>
+<body onclick="openBirthdayCard()">
+    <img src="butterfly-img1.png" alt="Butterfly" class="butterfly">
+    <img src="butterfly-img1.png" alt="Butterfly" class="butterfly">
+    <img src="butterfly-img1.png" alt="Butterfly" class="butterfly">
+    <img src="butterfly-img1.png" alt="Butterfly" class="butterfly">
+    <div class="gift-container">
+        <img src="birthday-girl.png" alt="Birthday Girl" class="photo">
+        <h1>🎁 Touch the Screen Once !!🎉</h1>
+        <div class="cake"></div>
+    </div>
+    <script>
+        function openBirthdayCard() {
+            window.location.href = 'birthday.html';
+        }
+    </script>
+</body>
+</html>
